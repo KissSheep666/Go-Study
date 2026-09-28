@@ -18,7 +18,7 @@ GoStudy/
 ├── README.md                       # 本文件：路线图与进度
 ├── notes/
 │   ├── 01-java-to-go.md            # 前置知识：Java → Go 全对照
-│   └── 02-m1-shortlink.md          # M1 教程：纯 net/http 实现短链接服务
+│   └── 02-m1-shortlink.md          # M1 完整源码教程（含全部源码 + 逐块讲解）
 └── shortlink/                      # 练手项目
     ├── go.mod
     ├── main.go                     # 入口 + 路由
