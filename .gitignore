@@ -1,0 +1,37 @@
+# ---- 编译产物 ----
+# Go 编译出的可执行文件。注意：源码仓库里【不放二进制】，
+# 因为任何人都能用 go build 重新生成，放进去只会让仓库变胖。
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+bin/
+
+# ---- 测试与覆盖率 ----
+*.test
+*.out
+coverage.*
+
+# ---- Go 工作区（多 module 时才会出现，一般不提交）----
+go.work
+go.work.sum
+
+# 注意：go.sum 【必须提交】，不要加到这里。
+# 它是依赖的校验和锁文件，相当于 package-lock.json。
+# 本项目目前没有第三方依赖，所以还没有 go.sum，
+# M5 引入数据库/Redis 驱动后会自动生成。
+
+# ---- 编辑器 ----
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/launch.json
+
+# ---- 操作系统 ----
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- 临时文件 ----
+*.log

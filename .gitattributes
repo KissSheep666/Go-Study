@@ -1,0 +1,25 @@
+# 统一换行符为 LF。
+#
+# 为什么需要这个：
+#   Windows 版 Git 默认 core.autocrlf=true，会把仓库里的 LF
+#   在检出时转成 CRLF、提交时再转回 LF。结果是：
+#   - git status 经常莫名其妙显示文件被修改
+#   - 和 Linux/macOS 协作者之间产生大量无意义的 diff
+#   - 上面那条 "LF will be replaced by CRLF" 警告就是在说这事
+#
+# 显式声明后，仓库里永远是 LF，检出时也不再转换。
+# Go 的 gofmt 接受 LF，不影响编译。
+
+* text=auto eol=lf
+
+# 显式声明，避免自动探测出错
+*.go   text eol=lf
+*.md   text eol=lf
+*.mod  text eol=lf
+*.sum  text eol=lf
+
+# 二进制文件不做换行转换，也不做 diff
+*.exe  binary
+*.png  binary
+*.jpg  binary
+*.ico  binary
